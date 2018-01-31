@@ -19,14 +19,15 @@ export class FormComponent implements OnInit {
   }
 
   formControlUpdate() {
-    this._form = this._formBuilder.group([]);    
-    this.form[this._index]['formInputs'].forEach(element => {
-      this._form.addControl(element.name, new FormControl(element.value, { validators: [] }));
+    this._form = this._formBuilder.group([]);
+    this.form[this._index]['formFields'].forEach(element => {
+      this._form.addControl(element.key, new FormControl(element.value, { validators: [] }));
     });
   }
 
   next() {
-    this._index == this._index++;
+    alert(this.form[this._index].action);
+    this._index = this._index <= this.form.length ? this._index++ : this._index;
     this.formControlUpdate();
   }
 }

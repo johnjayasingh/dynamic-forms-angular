@@ -1,14 +1,10 @@
 <form [formGroup]="_form">
   <h1 [innerHTML]="form[_index].label"></h1>
-  <div class="fields" *ngFor="let field of form[_index]['formInputs']">
+  <div class="fields" *ngFor="let field of form[_index]['formFields']">
     <div [ngSwitch]="field.type">
-      <div *ngSwitchCase="'input-text'">
-        <label [for]="field.name" [innerHTML]="field.label"></label>
-        <input type="email" [name]="field.name" [formControlName]="field.name">
-      </div>
-      <div *ngSwitchCase="'input-email'">
-        <label [for]="field.name" [innerHTML]="field.label"></label>
-        <input type="text" [name]="field.name" [formControlName]="field.name">
+      <div *ngSwitchCase="'input'">
+        <label [for]="field.key" [innerHTML]="field.templateOptions.label"></label>
+        <input type="text" [placeholder]="field.templateOptions.placeholder" [name]="field.key" [formControlName]="field.key">
       </div>
       <div *ngSwitchCase="'input-select'">
         <label [for]="field.name" [innerHTML]="field.label"></label>

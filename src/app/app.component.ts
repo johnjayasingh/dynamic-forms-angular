@@ -8,144 +8,64 @@ import { Component } from '@angular/core';
 export class AppComponent {
   form = [
     {
-      label: 'Form 1',
-      class: 'form-main',
-      formInputs: [
-        {
-          name: 'name',
-          label: 'Input 1',
-          value: 'My Name',
-          type: 'input-text'
-        },
-        {
-          name: 'email',
-          label: 'Input 1',
-          value: 'Some Mail',
-          type: 'input-email'
-        }, {
-          name: 'location',
-          label: 'Select 1',
-          value: 'option1',
-          options: [
-            { label: 'Option 1', value: 'option1' }
-          ],
-          type: 'input-select'
-        }
+      "name": "auxService",
+      "action": "/api/v1/ms/create",
+      "method": "POST",
+      "type": "submit",
+      "reqParam": [
+        "auxId",
+        "projectId",
+        "userId",
+        "orgId"
       ],
-      submit: 'forward',
-      back: 'back'
-    },
-    {
-      label: 'Form 2',
-      class: 'form-main',
-      formInputs: [
+      "formFields": [
         {
-          name: 'name',
-          label: 'Input 1',
-          value: 'My Name',
-          type: 'input-text'
+          "key": "name",
+          "type": "input",
+          "templateOptions": {
+            "placeholder": "Enter name",
+            "label": "Name"
+          }
         },
         {
-          name: 'email',
-          label: 'Input 1',
-          value: 'Some Mail',
-          type: 'input-email'
-        }, {
-          name: 'name',
-          label: 'Input 1',
-          value: 'My Name',
-          type: 'input-text'
+          "key": "version",
+          "type": "input",
+          "templateOptions": {
+            "placeholder": "Enter Version",
+            "label": "Version",
+            "action": "/api/v1/",
+            "method": "get"
+          }
         },
         {
-          name: 'email',
-          label: 'Input 1',
-          value: 'Some Mail',
-          type: 'input-email'
-        }, {
-          name: 'name',
-          label: 'Input 1',
-          value: 'My Name',
-          type: 'input-text'
+          "key": "environment",
+          "type": "input",
+          "templateOptions": {
+            "placeholder": "Choose environment",
+            "label": "Environment",
+            "action": "/api/v1/",
+            "method": "get"
+          }
         },
         {
-          name: 'email',
-          label: 'Input 1',
-          value: 'Some Mail',
-          type: 'input-email'
-        }, {
-          name: 'name',
-          label: 'Input 1',
-          value: 'My Name',
-          type: 'input-text'
+          "key": "target",
+          "type": "input",
+          "templateOptions": {
+            "placeholder": "Target Port",
+            "label": "Target port",
+            "action": "/api/v1/",
+            "method": "get"
+          }
         },
         {
-          name: 'email',
-          label: 'Input 1',
-          value: 'Some Mail',
-          type: 'input-email'
-        }, {
-          name: 'name',
-          label: 'Input 1',
-          value: 'My Name',
-          type: 'input-text'
-        },
-        {
-          name: 'email',
-          label: 'Input 1',
-          value: 'Some Mail',
-          type: 'input-email'
-        }, {
-          name: 'location',
-          label: 'Select 1',
-          value: 'option1',
-          options: [
-            { label: 'Option 1', value: 'option1' }
-          ],
-          type: 'input-select'
-        }, {
-          name: 'location',
-          label: 'Select 1',
-          value: 'option1',
-          options: [
-            { label: 'Option 1', value: 'option1' }
-          ],
-          type: 'input-select'
-        }, {
-          name: 'location',
-          label: 'Select 1',
-          value: 'option1',
-          options: [
-            { label: 'Option 1', value: 'option1' }
-          ],
-          type: 'input-select'
-        }, {
-          name: 'location',
-          label: 'Select 1',
-          value: 'option1',
-          options: [
-            { label: 'Option 1', value: 'option1' }
-          ],
-          type: 'input-select'
-        }, {
-          name: 'location',
-          label: 'Select 1',
-          value: 'option1',
-          options: [
-            { label: 'Option 1', value: 'option1' }
-          ],
-          type: 'input-select'
-        }, {
-          name: 'location',
-          label: 'Select 1',
-          value: 'option1',
-          options: [
-            { label: 'Option 1', value: 'option1' }
-          ],
-          type: 'input-select'
+          "key": "publish",
+          "type": "input",
+          "templateOptions": {
+            "placeholder": "Enter if required (optional)",
+            "label": "Publish port"
+          }
         }
-      ],
-      submit: 'forward',
-      back: 'back'
+      ]
     }
   ];
 }
