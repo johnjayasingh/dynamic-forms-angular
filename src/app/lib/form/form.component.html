@@ -1,0 +1,25 @@
+<form [formGroup]="_form">
+  <h1 [innerHTML]="form[_index].label"></h1>
+  <div class="fields" *ngFor="let field of form[_index]['formInputs']">
+    <div [ngSwitch]="field.type">
+      <div *ngSwitchCase="'input-text'">
+        <label [for]="field.name" [innerHTML]="field.label"></label>
+        <input type="email" [name]="field.name" [formControlName]="field.name">
+      </div>
+      <div *ngSwitchCase="'input-email'">
+        <label [for]="field.name" [innerHTML]="field.label"></label>
+        <input type="text" [name]="field.name" [formControlName]="field.name">
+      </div>
+      <div *ngSwitchCase="'input-select'">
+        <label [for]="field.name" [innerHTML]="field.label"></label>
+        <select [formControlName]="field.name">
+          <option [value]="option.value" *ngFor="let option of field.options" [innerHTML]="option.label"></option>
+        </select>
+      </div>
+      <div *ngSwitchDefault>
+        <p>Wrong Input{{ field.type }}</p>
+      </div>
+    </div>
+  </div>
+</form>
+<button (click)="next()">Next</button>
